@@ -1,8 +1,10 @@
 
 
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: file_names, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:onlinestore/DetailScreen/desc.dart';
+import 'package:onlinestore/bottom-navigation/NavigationBar.dart';
 import 'package:onlinestore/model.dart';
 import 'package:onlinestore/services.dart';
 
@@ -22,7 +24,7 @@ TextEditingController searchController = TextEditingController();
 
 @override
 void initState() {
-    // TODO: implement initState
+    
     super.initState();
     fetchproduct();
   }
@@ -34,21 +36,21 @@ void initState() {
             ? TextField(
                 controller: searchController,
                 onChanged: filterProducts,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Search',
                 ),
               )
-            : Text('Products'),
+            : const Text('Products'),
         actions: [
           if (isSearching)
             IconButton(
               onPressed: cancelSearch,
-              icon: Icon(Icons.clear),
+              icon: const Icon(Icons.clear),
             )
           else
             IconButton(
               onPressed: startSearch,
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search),
             ),
         ],
       ),
@@ -69,10 +71,10 @@ void initState() {
             ),
             trailing:Text('\$${productDisplay[index].price}',
             textScaleFactor: 1.3,
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
-                color: const Color.fromARGB(255, 220, 110, 240)),
+                color: Color.fromARGB(255, 220, 110, 240)),
             )
             
           ),
@@ -81,7 +83,7 @@ void initState() {
       
       ),
         
-      
+      bottomNavigationBar:const BottomNavigation(),
     );
     
   }
