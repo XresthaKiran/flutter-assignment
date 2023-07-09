@@ -83,7 +83,7 @@ void initState() {
       
       ),
         
-      bottomNavigationBar:const BottomNavigation(),
+      
     );
     
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onlinestore/bottom-navigation/NavigationBar.dart';
 
 
 import 'HomeScreen/Home.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange
       ),
-      home:MyHomePage(),
+      home:BottomNavigation(),
     );
   }
 }

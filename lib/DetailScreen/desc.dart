@@ -137,7 +137,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
           ))
         ],
       ),
-     bottomNavigationBar:const BottomNavigation() ,
+     
 
 
 

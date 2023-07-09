@@ -1,74 +1,72 @@
 // ignore: file_names
 
-// import 'package:flutter/material.dart';
-// import 'package:onlinestore/HomeScreen/Home.dart';
+import 'package:flutter/material.dart';
+import 'package:onlinestore/HomeScreen/Catalog.dart';
+import 'package:onlinestore/HomeScreen/Home.dart';
 
-// class BottomNavigation extends StatefulWidget {
-//   const BottomNavigation({super.key});
+class BottomNavigation extends StatefulWidget {
+  const BottomNavigation({super.key});
 
-//   @override
-//   State<BottomNavigation> createState() => _BottomNavigationState();
-// }
+  @override
+  State<BottomNavigation> createState() => _BottomNavigationState();
+}
 
-// class _BottomNavigationState extends State<BottomNavigation> {
-//    int _currentIndex = 0;
-   
-//    void _onTabTapped(int index) {
-//     setState(() {
-//       _currentIndex = index;
-//     });
-//   }
-//   @override
-//   Widget build(BuildContext context) {
-//     return BottomNavigationBar(
+class _BottomNavigationState extends State<BottomNavigation> {
+   int _currentIndex = 0;
+   List pages =[
+    MyHomePage(),
+    Catalog(),
+    MyHomePage(),
+    MyHomePage()
+   ];
+   void _onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body:pages[_currentIndex],
+     bottomNavigationBar: BottomNavigationBar(
 
-//        currentIndex: _currentIndex,
-//         onTap: _onTabTapped,
-//         type: BottomNavigationBarType.fixed,
-//         backgroundColor: Colors.deepOrange,
-//          selectedItemColor: Colors.white,
-//        unselectedItemColor: Color.fromARGB(179, 193, 188, 188),
-//    items: [
-//        BottomNavigationBarItem(
-//             icon: Icon(Icons.home,),
-//             label: 'Home',
+       currentIndex: _currentIndex,
+        onTap: _onTabTapped,
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.deepOrange,
+         selectedItemColor: Colors.white,
+       unselectedItemColor: Color.fromARGB(179, 193, 188, 188),
+   items: [
+       BottomNavigationBarItem(
+            icon: Icon(Icons.home,),
+            label: 'Home',
             
             
-//           ),
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.category,
-//             ),
-//             label: 'Catalog',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.category,
+            ),
+            label: 'Catalog',
             
-//           ),
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.shopping_cart,
-//             ),
-//             label: 'Cart',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart,
+            ),
+            label: 'Cart',
             
            
-//           ),
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.person,
-//             ),
-//             label: 'Profile',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person,
+            ),
+            label: 'Profile',
             
-//           ),
-//    ]
-//     );
-//   }
-//    Widget _buildPage(int index) {
-//     switch (index) {
-//       case 0:
-//         return MyHomePage();
-//       case 1:
-//         return MyHomePage();
-      
-//       default:
-//         return MyHomePage();
-//     }
-//   }
-// }
+          ),
+   ]
+    )
+    );
+  }
+}
 
 // import 'package:flutter/cupertino.dart';
 // import 'package:flutter/material.dart';
@@ -159,37 +157,37 @@
 
 // ignore_for_file: file_names, duplicate_ignore
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:onlinestore/HomeScreen/Home.dart';
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter/material.dart';
+// import 'package:onlinestore/HomeScreen/Home.dart';
 
-class BottomNavigation extends StatefulWidget {
-  const BottomNavigation({super.key});
+// class BottomNavigation extends StatefulWidget {
+//   const BottomNavigation({super.key});
 
-  @override
-  State<BottomNavigation> createState() => _BottomNavigationState();
-}
+//   @override
+//   State<BottomNavigation> createState() => _BottomNavigationState();
+// }
 
-class _BottomNavigationState extends State<BottomNavigation> {
+// class _BottomNavigationState extends State<BottomNavigation> {
  
  
 
    
-  @override
-  Widget build(BuildContext context) {
-    return BottomAppBar(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          IconButton(onPressed: (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MyHomePage()));}, icon:const Icon(CupertinoIcons.home),),
-          IconButton(onPressed: (){}, icon:const Icon(CupertinoIcons.bag),
-          ),
-          IconButton(onPressed: (){}, icon:const Icon(CupertinoIcons.cart),
-          ),
-          IconButton(onPressed: (){}, icon:const Icon(CupertinoIcons.person),
-          ),
-        ],
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return BottomAppBar(
+//       child: Row(
+//         mainAxisAlignment: MainAxisAlignment.spaceAround,
+//         children: [
+//           IconButton(onPressed: (){Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MyHomePage()));}, icon:const Icon(CupertinoIcons.home),),
+//           IconButton(onPressed: (){}, icon:const Icon(CupertinoIcons.bag),
+//           ),
+//           IconButton(onPressed: (){}, icon:const Icon(CupertinoIcons.cart),
+//           ),
+//           IconButton(onPressed: (){}, icon:const Icon(CupertinoIcons.person),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
